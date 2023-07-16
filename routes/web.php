@@ -43,10 +43,23 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
+    })->name('dashboard');
     
     //shell fish admin    
-    })->name('dashboard');
     Route::get('/admin', function () {
         return view('admin.dashboard');
-    })->name('dashboard');
+    })->name('admin');
+    
+    //destination
+    Route::prefix('admin')->group(function(){
+    Route::get('/list-destination', function () {
+        return view('admin.destination.list');
+    })->name('add-destination');
+    Route::get('/add-destination', function () {
+        return view('admin.destination.add');
+    })->name('add-destination');
+    Route::get('/add-city', function () {
+        return view('admin.destination.add_city');
+    })->name('add-city');
+});
 });

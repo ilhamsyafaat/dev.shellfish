@@ -20,9 +20,27 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('backend/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-@yield('dashboard')
+</head>
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+@include('admin.components.sidebar')
+@include('admin.components.navbar')
+
+@yield('content')
+
+
+<footer class="sticky-footer bg-white mt-4">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; ShellFish 2023 - <script>document.write(new Date().getFullYear())</script></span>
+        </div>
+    </div>
+</footer>
 
  <!-- Bootstrap core JavaScript-->
  <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
