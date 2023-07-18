@@ -65,7 +65,7 @@
     </li>
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{ url('/admin/view/booking') }}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Booking List</span></a>
     </li>
