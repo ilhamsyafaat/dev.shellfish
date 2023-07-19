@@ -977,13 +977,14 @@
                 value: function _updatePlaceholder() {
                     var shouldSetPlaceholder = this.options.autoPlaceholder === "aggressive" || !this.hadInitialPlaceholder && this.options.autoPlaceholder === "polite";
                     if (window.intlTelInputUtils && shouldSetPlaceholder) {
+                        var dialCode = this.selectedCountryData.dialCode ? "+".concat(this.selectedCountryData.dialCode) : "";
                         var numberType = intlTelInputUtils.numberType[this.options.placeholderNumberType];
                         var placeholder = this.selectedCountryData.iso2 ? intlTelInputUtils.getExampleNumber(this.selectedCountryData.iso2, this.options.nationalMode, numberType) : "";
                         placeholder = this._beforeSetNumber(placeholder);
                         if (typeof this.options.customPlaceholder === "function") {
                             placeholder = this.options.customPlaceholder(placeholder, this.selectedCountryData);
                         }
-                        this.telInput.setAttribute("placeholder", placeholder);
+                        this.telInput.setAttribute("placeholder", dialCode);
                     }
                 }
             }, {

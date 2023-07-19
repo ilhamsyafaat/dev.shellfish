@@ -120,7 +120,7 @@
 
             <div class="mb-3">
                 <label for="mobileNumber" class="form-label">Mobile Number</label>
-                <input type="tel" class="form-control" name="phone" id="mobileNumber">
+                <input type="tel"  class="form-control" name="phone" id="mobileNumber">
                 <span id="valid-msg" class="hide"></span>
                 <span id="error-msg" class="hide"></span>
             </div>
@@ -165,9 +165,9 @@
         const errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
         // initialise plugin
         const iti = window.intlTelInput(input, {
+
             utilsScript: "{{ asset('user/js/utils.js?1687509211722') }}"
         });
-
         const reset = () => {
             input.classList.remove("error");
             errorMsg.innerHTML = "";
@@ -194,15 +194,21 @@
             if (!isValid) {
                 e.preventDefault(); // Mencegah pengiriman form jika nomor telepon tidak valid
                 input.classList.add("error");
-                    const errorCode = iti.getValidationError();
-                    errorMsg.innerHTML = errorMap[errorCode];
-                    errorMsg.classList.remove("hide");
+                const errorCode = iti.getValidationError();
+                errorMsg.innerHTML = errorMap[errorCode];
+                errorMsg.classList.remove("hide");
             }
         });
-
         // on keyup / change flag: reset
         input.addEventListener('change', reset);
         input.addEventListener('keyup', reset);
+
+        function updatePlaceholder(selectedCountry) {
+ 
+            input.value = '+' + iti.getSelectedCountryData().dialCode;
+        }
+        updatePlaceholder();
+        // Mengatur nilai input dengan kode negara
     </script>
     <script type="text/javascript">
         $("#validate").validate({
@@ -228,7 +234,7 @@
                 },
                 phone: {
                     required: true,
-                    
+
                 },
                 country: {
                     required: true,
