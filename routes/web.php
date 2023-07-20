@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
     return view('user.home');
 });
 
@@ -27,6 +23,10 @@ Route::get('/destination', function () {
 
 Route::get('/transportation', function () {
     return view('user.transportation');
+});
+
+Route::get('/special', function () {
+    return view('user.special');
 });
 
 Route::get('/booking', function () {
@@ -44,22 +44,29 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    
+
     //shell fish admin    
     Route::get('/admin', function () {
         return view('admin.dashboard');
     })->name('admin');
-    
+
     //destination
-    Route::prefix('admin')->group(function(){
-    Route::get('/list-destination', function () {
-        return view('admin.destination.list');
-    })->name('add-destination');
-    Route::get('/add-destination', function () {
-        return view('admin.destination.add');
-    })->name('add-destination');
-    Route::get('/add-city', function () {
-        return view('admin.destination.add_city');
-    })->name('add-city');
-});
+    Route::prefix('admin')->group(function () {
+        Route::get('/list-destination', function () {
+            return view('admin.destination.list');
+        })->name('list-destination');
+        Route::get('/add-destination', function () {
+            return view('admin.destination.add');
+        })->name('add-destination');
+        Route::get('/add-city', function () {
+            return view('admin.destination.add_city');
+        })->name('add-city');
+
+        Route::get('/list-transportation', function(){
+            return view('admin.transportation.list');
+        })->name('list-transportation');
+        Route::get('/add-transportation', function(){
+            return view('admin.transportation.add');
+        })->name('add-transportation');
+    });
 });

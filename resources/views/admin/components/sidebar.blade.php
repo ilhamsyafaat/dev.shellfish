@@ -58,8 +58,8 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">All Transportation</a>
-                <a class="collapse-item" href="utilities-border.html">Add Transportation</a>
+                <a class="collapse-item" href="{{ url('/admin/list-transportation') }}">All Transportation</a>
+                <a class="collapse-item" href="{{ url('/admin/add-transportation') }}">Add Transportation</a>
             </div>
         </div>
     </li>

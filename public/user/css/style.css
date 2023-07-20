@@ -97,6 +97,13 @@
       
     }
 
+    .mt-6{
+      margin-top: 130px;
+    }
+
+    .mt-6{
+      margin-bottom: 130px;
+    }
 
     
   }
@@ -285,4 +292,17 @@ margin-top: 70px;
   margin-bottom: 100px;
   padding-bottom: 40px;
   
+}
+
+.special{
+  background-image: url('../assets/images/Banner.jpg');
+    background-size: cover;
+}
+
+.mt-6{
+  margin-top: 70px;
+}
+
+.mt-6{
+  margin-bottom: 120px;
 }

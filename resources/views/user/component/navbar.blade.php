@@ -10,14 +10,14 @@
           <div class="ms-auto">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" href="{{ url('/home') }}" aria-current="page">Home <span
+                <a class="nav-link active" href="{{ url('/') }}" aria-current="page">Home <span
                     class="visually-hidden">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/destination') }}">Destinations</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="specialOffers.html">Special Offers</a>
+                <a class="nav-link" href="{{ url('/special') }}">Special Offers</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/transportation') }}">Transportation</a>
