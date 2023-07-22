@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,6 +50,8 @@ Route::middleware([
     Route::get('/admin', function () {
         return view('admin.dashboard');
     })->name('admin');
+    Route::post('/store/booking', [BookingController::class, 'store'])->name('store.booking');
+    
 
     //destination
     Route::prefix('admin')->group(function () {
@@ -68,5 +71,6 @@ Route::middleware([
         Route::get('/add-transportation', function(){
             return view('admin.transportation.add');
         })->name('add-transportation');
-    });
+        Route::get('/view/booking', [BookingController::class, 'index'])->name('view.booking');
+});
 });

@@ -9,7 +9,13 @@
   font-family: sunsilk;
   font-size: 30px;
 }
-
+.error{
+  color: red;
+  border-color: red;
+}
+#error-msg{
+  color: red;
+}
 .carousel-inner {
     padding: 1em;
   }
