@@ -26,7 +26,7 @@
                             <td>Otto</td>
                             <td>@mdoasda</td>
                             <td>
-                                <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i>Edit</button>
+                                <a href="{{ url('/admin/edit-destination') }}"><button type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i>Edit</button></a>
                                 <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i>Delete</button>
                             </td>
                           </tr>

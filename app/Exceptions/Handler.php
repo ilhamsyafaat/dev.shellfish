@@ -28,12 +28,12 @@ class Handler extends ExceptionHandler
             //
         });
     }
-    // public function render($request, Throwable $exception)
-    // {
-    //     if ($exception instanceof MethodNotAllowedHttpException) {
-    //         return response()->view('welcome', [], 404);
-    //     }
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof MethodNotAllowedHttpException) {
+            return response()->view('user.home', [], 404);
+        }
 
-    //     return parent::render($request, $exception);
-    // }
+        return parent::render($request, $exception);
+    }
 }

@@ -25,7 +25,7 @@
                                 <th>Firstname</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th>Aksi</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
@@ -37,8 +37,10 @@
                                     <td>{{$row->email}}</td>
                                     <td>{{$row->phone}}</td>
                                     <td>
+                                        <a href="{{ url('/admin/booking/detail') }}" id="...." ><button type="button"
+                                                class="btn btn-warning"><i class="bi bi-pencil-square"></i>Detail</button></a>
                                         <a href="#" id="delete" data-confirm-delete="true" ><button type="button"
-                                                class="btn btn-danger delete">Hapus</button></a>
+                                                class="btn btn-danger delete"><i class="bi bi-trash"></i>Delete</button></a>
                                     </td>
                                 </tr>
                             @endforeach

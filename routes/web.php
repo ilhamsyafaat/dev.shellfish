@@ -34,23 +34,23 @@ Route::get('/booking', function () {
     return view('user.booking');
 });
 
-// Admin
-// Route::get('/login', [LoginController::class, 'index']);
 
+Route::post('/store/booking', [BookingController::class, 'store'])->name('store.booking');
+
+// Admin
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
-    //shell fish admin    
-    Route::get('/admin', function () {
         return view('admin.dashboard');
     })->name('admin');
-    Route::post('/store/booking', [BookingController::class, 'store'])->name('store.booking');
+
+    //shell fish admin    
+    // Route::get('/admin', function () {
+    //     return view('admin.dashboard');
+    // })->name('admin');
     
 
     //destination
@@ -64,6 +64,9 @@ Route::middleware([
         Route::get('/add-city', function () {
             return view('admin.destination.add_city');
         })->name('add-city');
+        Route::get('/edit-destination', function(){
+            return view('admin.destination.edit ');
+        })->name('edit-destination');
 
         Route::get('/list-transportation', function(){
             return view('admin.transportation.list');
@@ -71,6 +74,23 @@ Route::middleware([
         Route::get('/add-transportation', function(){
             return view('admin.transportation.add');
         })->name('add-transportation');
+        Route::get('/detail-transportation', function(){
+            return view('admin.transportation.detail');
+        })->name('detail-transportation');
+
+        Route::get('/add-specialoffers', function(){
+            return view('admin.special.add');
+        })->name('add-specialoffers');
+        Route::get('/specialoffers', function(){
+            return view('admin.special.special');
+        })->name('specialoffers');
+        Route::get('/edit-specialoffers', function(){
+            return view('admin.special.edit');
+        })->name('edit-specialoffers');
+
         Route::get('/view/booking', [BookingController::class, 'index'])->name('view.booking');
+        Route::get('/booking/detail', function(){
+            return view('admin.booking.detail');
+        })->name('booking-detail');
 });
 });

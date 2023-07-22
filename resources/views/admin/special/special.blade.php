@@ -1,30 +1,13 @@
 @extends('admin.master')
+
+@section('content')
 @section('content')
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <h1>Add City</h1>
-        </div>
-        <div class="card-body">
-            <div class="mb-3">
-              <label for="" class="form-label">City Name</label>
-              <input type="text"
-                class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary mt-4 mb-4">Save</button>
-        </div>
-    </div>
-</div>
-
-{{-- list --}}
-
-<div class="container-fluid mt-4">
-    <div class="card">
-        <div class="card-header">
             <div class="d-sm-flex align-items-center justify-content-between">
-              <h1 class="h3 mb-0 text-gray-800">List City</h1>
+              <h1 class="h3 mb-0 text-gray-800">List Special Offers</h1>
+              <a href="{{ url('admin/add-transportation') }}"><button type="button" class="btn btn-outline-primary"><i class="bi bi-plus-circle"></i> Add </button></a>
             </div>
           </div>
         <div class="card-body">
@@ -32,15 +15,16 @@
                 <thead>
                       <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Thumbnail</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
+                        <td>Images</td>
                         <td>
+                            <a href="{{ url('/admin/edit-specialoffers') }}"><button type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i>Detail</button></a>
                             <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i>Delete</button>
                         </td>
                       </tr>
@@ -49,4 +33,5 @@
         </div>
     </div>
 </div>
+@endsection
 @endsection

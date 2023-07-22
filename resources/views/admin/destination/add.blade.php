@@ -29,7 +29,7 @@
           <input type="text" class="form-control" id="price">
         </div>
         <div class="mb-3">
-          <label for="shortDescription" class="form-label">Shor Description</label>
+          <label for="shortDescription" class="form-label">Short Description</label>
           <textarea class="form-control" id="shortDescription" rows="2" maxlength="100"></textarea>
         </div>
         <div class="mb-3">

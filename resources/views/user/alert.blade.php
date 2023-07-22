@@ -75,7 +75,7 @@
             <h3 class="fw-bolder">thank you for ordering services on shelfish, wait for further information we will send the order number via WhatsApp</h3>
         </div>
         <center>
-            <a href="{{ url('/home') }}" class="btn btn-primary">Home</a>
+            <a href="{{ url('/') }}" class="btn btn-primary">Home</a>
         </center>
        
     </div>
