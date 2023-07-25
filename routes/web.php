@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\DestinationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,46 +53,48 @@ Route::middleware([
     // Route::get('/admin', function () {
     //     return view('admin.dashboard');
     // })->name('admin');
-    
+
 
     //destination
     Route::prefix('admin')->group(function () {
         Route::get('/list-destination', function () {
             return view('admin.destination.list');
         })->name('list-destination');
-        Route::get('/add-destination', function () {
-            return view('admin.destination.add');
-        })->name('add-destination');
-        Route::get('/add-city', function () {
-            return view('admin.destination.add_city');
-        })->name('add-city');
-        Route::get('/edit-destination', function(){
+        Route::get('/edit-destination', function () {
             return view('admin.destination.edit ');
         })->name('edit-destination');
 
-        Route::get('/list-transportation', function(){
+        Route::get('/list-transportation', function () {
             return view('admin.transportation.list');
         })->name('list-transportation');
-        Route::get('/add-transportation', function(){
+        Route::get('/add-transportation', function () {
             return view('admin.transportation.add');
         })->name('add-transportation');
-        Route::get('/detail-transportation', function(){
+        Route::get('/detail-transportation', function () {
             return view('admin.transportation.detail');
         })->name('detail-transportation');
 
-        Route::get('/add-specialoffers', function(){
+        Route::get('/add-specialoffers', function () {
             return view('admin.special.add');
         })->name('add-specialoffers');
-        Route::get('/specialoffers', function(){
+        Route::get('/specialoffers', function () {
             return view('admin.special.special');
         })->name('specialoffers');
-        Route::get('/edit-specialoffers', function(){
-            return view('admin.special.edit');
+        Route::get('/edit-specialoffers', function () {
+            return view('admin.special.detail');
         })->name('edit-specialoffers');
 
         Route::get('/view/booking', [BookingController::class, 'index'])->name('view.booking');
-        Route::get('/booking/detail', function(){
+        Route::get('/booking/detail', function () {
             return view('admin.booking.detail');
         })->name('booking-detail');
-});
+    });
+    Route::prefix('destination')->group(function () {
+        Route::get('/add-city', [CityController::class, 'index'])->name('add-city');
+        Route::post('/store-city', [CityController::class, 'store'])->name('store-city');
+        Route::get('/delete-city/{id}', [CityController::class, 'destroy'])->name('delete-city');
+        Route::get('/add-destination', [DestinationController::class,'create'])->name('add-destination');
+        Route::get('/view-destination', [DestinationController::class,'index'])->name('view-destination');
+        Route::post('/store-destination', [DestinationController::class,'store'])->name('store-destination');
+    });
 });

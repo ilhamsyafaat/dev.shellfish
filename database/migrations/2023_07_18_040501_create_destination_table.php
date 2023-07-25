@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('destination', function (Blueprint $table) {
             $table->id();
-            $table->string('city');
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')->references('id')->on('city')->onDelete('cascade')->onUpdate('cascade');
             $table->string('destination_name');
             $table->float('price');
             $table->string('short_descript');

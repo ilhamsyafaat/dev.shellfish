@@ -44,6 +44,9 @@
 </footer>
 
  <!-- Bootstrap core JavaScript-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/js/fileinput.js" type="text/javascript">
+ </script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js" type="text/javascript"></script>
  <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
  <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -59,7 +62,7 @@
  <!-- Page level custom scripts -->
  <script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>
  <script src="{{ asset('backend/js/demo/chart-pie-demo.js') }}"></script>
-
+ @stack('js')
 </body>
 
 </html>

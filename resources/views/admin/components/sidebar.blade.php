@@ -40,9 +40,10 @@
         <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="{{ url('/admin/list-destination') }}">All Destination</a>
-                <a class="collapse-item" href="{{ url('/admin/add-destination') }}">Add Destination</a>
-                <a class="collapse-item" href="{{ url('/admin/add-city') }}">Add City</a>
+                <a class="collapse-item" href="{{ route('add-city') }}">Add City</a>
+                <a class="collapse-item" href="{{ route('view-destination') }}">All Destination</a>
+                <a class="collapse-item" href="{{ route('add-destination') }}">Add Destination</a>
+               
             </div>
         </div>
     </li>
