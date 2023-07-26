@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\City;
 use App\Models\Destination;
 use App\Models\DestinationFoto;
@@ -81,7 +80,20 @@ class DestinationController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $q = DB::table('destination')->select(DB::raw('MAX(RIGHT(id,6)) as kode'));
+        $kd = "";
+        if ($q->count() > 0) {
+            foreach ($q->get() as $k) {
+                $tmp = ((int)$k->kode) + 1;
+                $kd = sprintf("%06s", $tmp);
+            }
+        } else {
+            $kd = "000001";
+        }
+        $kota = City::all();
+        $photo = Destination::findorFail($id);
+        $data = Destination::find($id);
+        return view('admin.destination.edit',compact('data','kota','photo','kd'));
     }
 
     /**
@@ -89,7 +101,31 @@ class DestinationController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = Destination::find($id);
+        $data->city_id = $request->city_id;
+        $data->destination_name = $request->destination_name;
+        $data->price = $request->price;
+        $data->short_descript = $request->short_descript;
+        $data->details_descript = $request->details_descript;
+        if ($request->hasFile('thumbnails')) {
+            $thumbnails=$request->file('thumbnails')->store('thumbnails');
+            $data->thumbnails = $thumbnails;
+        }
+        $data->update();
+
+        if($request->hasFile("foto_detail")){
+            foreach ($request->foto_detail as $key => $foto_detail) {
+                $admin = new DestinationFoto();
+                if ($admin->foto_detail = $foto_detail) {
+                    $newbaru= $foto_detail->store('foto_details');
+                }
+                $admin['foto_detail'] = $newbaru;
+                $admin->id_destination = $request->kd;
+                $admin->save();
+            }
+        }
+        
+        return redirect()->route('view-destination');
     }
 
     /**
@@ -97,6 +133,14 @@ class DestinationController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Destination::find($id);
+        $data->delete();
+        return redirect()->route('view-destination');
+    }
+    public function delete(string $id)
+    {
+        $photo = DestinationFoto::find($id);
+        $photo->delete();
+        return redirect()->back();
     }
 }

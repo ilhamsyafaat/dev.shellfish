@@ -60,9 +60,6 @@ Route::middleware([
         Route::get('/list-destination', function () {
             return view('admin.destination.list');
         })->name('list-destination');
-        Route::get('/edit-destination', function () {
-            return view('admin.destination.edit ');
-        })->name('edit-destination');
 
         Route::get('/list-transportation', function () {
             return view('admin.transportation.list');
@@ -96,5 +93,9 @@ Route::middleware([
         Route::get('/add-destination', [DestinationController::class,'create'])->name('add-destination');
         Route::get('/view-destination', [DestinationController::class,'index'])->name('view-destination');
         Route::post('/store-destination', [DestinationController::class,'store'])->name('store-destination');
+        Route::get('/edit-destination/{id}', [DestinationController::class,'edit'])->name('edit-destination');
+        Route::post('/update-destination/{id}', [DestinationController::class,'update'])->name('update-destination');
+        Route::get('/delete-photo/{id}', [DestinationController::class,'delete'])->name('delete-photo');
+        Route::get('/destroy-destination/{id}', [DestinationController::class,'destroy'])->name('destroy-destination');
     });
 });

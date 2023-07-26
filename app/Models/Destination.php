@@ -11,4 +11,8 @@ class Destination extends Model
     protected $table = 'destination';
     protected $primaryKey = 'id';
     public $timestamps = true;
+    public function details()
+    {
+        return $this->hasMany(DestinationFoto::class, 'id_destination');
+    }
 }

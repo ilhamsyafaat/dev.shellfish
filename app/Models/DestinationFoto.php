@@ -11,4 +11,5 @@ class DestinationFoto extends Model
     protected $table = 'destinationfoto';
     protected $primaryKey = 'id';
     public $timestamps = true;
+    
 }
