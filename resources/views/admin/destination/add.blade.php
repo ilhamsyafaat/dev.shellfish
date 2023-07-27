@@ -16,8 +16,9 @@
                     <input type="text" class="form-control d-none" readonly value="{{ $kd }}" name="kd">
                     <div class="mb-3">
                         <select class="form-select form-control" name="city_id" aria-label="Default select example">
+                            <option selected>Select City</option>
                             @foreach ($data as $item)
-                                <option selected>Select City</option>
+                                
                                 <option value="{{ $item->id }}">{{ $item->city }}</option>
                             @endforeach
 
