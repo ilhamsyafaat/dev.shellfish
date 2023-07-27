@@ -8,15 +8,13 @@
                     <h1 class="h3 mb-0 text-gray-800">Add Transportation</h1>
                 </div>
             </div>
-            <form action="{{route('store-transportation')}}" method="POST" enctype="multipart/form-data">
+            <form id="validate" action="{{route('store-transportation')}}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="card-body">
 
                     <div class="mb-3">
-                        <div class="input-group mb-3">
-                            <div class="custom-file">
-                                <input type="file" id="avatar" name="picture_transportation" accept="image/png, image/jpeg">
-                            </div>
+                        <div class="mb-3">
+                            <input type="file" id="avatar" name="picture_transportation" accept="image/png, image/jpeg">
                         </div>
                         <div class="mb-3">
                             <label for="title" class="form-label">Name Transportation</label>
@@ -47,3 +45,46 @@
     </div>
     </div>
 @endsection
+@push('js')
+<script type="text/javascript">
+    $("#validate").validate({
+      
+      rules: {
+        name_transportation: {
+          required: true,
+        },
+        picture_transportation: {
+          required: true,
+        },
+        price: {
+          required: true,
+          number: true,
+        },
+        short_description: {
+          required: true,
+        },
+        details_description: {
+          required: true,
+        },
+       
+      },
+      messages: {
+        judul_event: {
+          required: "Judul event tidak boleh kosong",
+        },
+        pembuat: {
+   
+          required: "pembuat tidak boleh kosong",
+          
+        },
+        foto_event: {
+          required: "foto event harus ditambahkan",
+        },
+        berita: {
+          required: "verita tidak boleh kosong",
+        },
+      },
+    });
+  </script>
+@endpush
+

@@ -5,6 +5,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\SpecialOfferController;
 use App\Http\Controllers\TransportationController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,9 +27,7 @@ Route::get('/destination', function () {
     return view('user.destination');
 });
 
-Route::get('/transportation', function () {
-    return view('user.transportation');
-});
+Route::get('/transportation', [UserController::class,'Transportation']);
 
 Route::get('/special', function () {
     return view('user.special');

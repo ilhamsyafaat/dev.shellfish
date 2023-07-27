@@ -14,8 +14,8 @@
                     <div class="ms-auto">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('/') }}" aria-current="page">Home <span
-                                    class="visually-hidden">(current)</span></a>
+                                <a class="nav-link active" href="{{ url('/') }}" aria-current="page">Home <span
+                                        class="visually-hidden">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/destination') }}">Destinations</a>
@@ -27,8 +27,7 @@
                                 <a class="nav-link" href="{{ url('/transportation') }}">Transportation</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link badge text-bg-orange m-2 p-2"
-                  href="{{url('/booking')}}">Book</a>
+                                <a class="nav-link badge text-bg-orange m-2 p-2" href="{{ url('/booking') }}">Book</a>
                             </li>
                             <!-- Language -->
                             <!-- <div class="nav-item dropdown">
@@ -55,106 +54,20 @@
     <main class="transport">
         <div class="container">
             <div class="row text-center d-flex justify-content-center mb-5">
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
+                @foreach ($data as $item => $row)
+                    <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
+                        <img src="{{asset('storage/'.$row->picture_transportation)}}" class="card-img-top" alt="...">
+                        <div class="card-body text-blue">
+                            <div class="text-center">
+                                <h3 class="card-title fw-bolder">{{$row->name_transportation}}</h3>
+                                <h5 class="card-text">${{$row->price}}<small class="per">/day</small></h5>
+                                <a href="#" class="btn btn-orange text-white">Details</a>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
-                    <img src="/assets/images/transportation/AVANZA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-blue">
-                        <div class="text-center">
-                        <h3 class="card-title fw-bolder">Avanza</h3>
-                        <h5 class="card-text">$5.00<small class="per">/day</small></h5>
-                        <a href="#" class="btn btn-orange text-white">Details</a>
-                    </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </main>
@@ -174,13 +87,13 @@
     </div>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
 
-    <script src="{{asset('user/js/bootstrap.min.js')}}" crossorigin="anonymous"></script>
-    <script src="{{asset('user/js/jquery.bundle.min.js')}}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="{{asset('user/js/jquery.min.js')}}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="{{asset('user/js/script.js')}}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{{ asset('user/js/bootstrap.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('user/js/jquery.bundle.min.js') }}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{{ asset('user/js/jquery.min.js') }}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{{ asset('user/js/script.js') }}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
 
 
 

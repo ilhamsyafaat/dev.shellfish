@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('backend/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <script src="{{asset('backend/js/validasi.js')}}"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
@@ -54,7 +55,10 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js"
             type="text/javascript"></script>
-        <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+            integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        {{-- <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script> --}}
         <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
         <!-- Core plugin JavaScript-->
@@ -65,6 +69,7 @@
 
         <!-- Page level plugins -->
         <script src="{{ asset('backend/vendor/chart.js/Chart.min.js') }}"></script>
+        <script src="{{ asset('backend/js/validasi.js') }}"></script>
 
         <!-- Page level custom scripts -->
         <script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>
