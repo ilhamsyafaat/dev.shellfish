@@ -3,6 +3,8 @@
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\SpecialOfferController;
+use App\Http\Controllers\TransportationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,34 +59,9 @@ Route::middleware([
 
     //destination
     Route::prefix('admin')->group(function () {
-        Route::get('/list-destination', function () {
-            return view('admin.destination.list');
-        })->name('list-destination');
-
-        Route::get('/list-transportation', function () {
-            return view('admin.transportation.list');
-        })->name('list-transportation');
-        Route::get('/add-transportation', function () {
-            return view('admin.transportation.add');
-        })->name('add-transportation');
-        Route::get('/detail-transportation', function () {
-            return view('admin.transportation.detail');
-        })->name('detail-transportation');
-
-        Route::get('/add-specialoffers', function () {
-            return view('admin.special.add');
-        })->name('add-specialoffers');
-        Route::get('/specialoffers', function () {
-            return view('admin.special.special');
-        })->name('specialoffers');
-        Route::get('/edit-specialoffers', function () {
-            return view('admin.special.detail');
-        })->name('edit-specialoffers');
-
         Route::get('/view/booking', [BookingController::class, 'index'])->name('view.booking');
-        Route::get('/booking/detail', function () {
-            return view('admin.booking.detail');
-        })->name('booking-detail');
+        Route::get('/booking/detail/{id}', [BookingController::class, 'edit'])->name('booking-detail');
+        Route::get('/booking/delete/{id}', [BookingController::class, 'destroy'])->name('booking-delete');
     });
     Route::prefix('destination')->group(function () {
         Route::get('/add-city', [CityController::class, 'index'])->name('add-city');
@@ -97,5 +74,21 @@ Route::middleware([
         Route::post('/update-destination/{id}', [DestinationController::class,'update'])->name('update-destination');
         Route::get('/delete-photo/{id}', [DestinationController::class,'delete'])->name('delete-photo');
         Route::get('/destroy-destination/{id}', [DestinationController::class,'destroy'])->name('destroy-destination');
+    });
+    Route::prefix('tranportation')->group(function(){
+        Route::get('/list-transportation', [TransportationController::class,'index'])->name('list-transportation');
+        Route::get('/add-transportation',[TransportationController::class,'create'])->name('add-transportation');
+        Route::post('/store-transportation',[TransportationController::class,'store'])->name('store-transportation');
+        Route::get('/detail-transportation/{id}',[TransportationController::class,'edit'])->name('detail-transportation');
+        Route::post('/update-transportation/{id}',[TransportationController::class,'update'])->name('update-transportation');
+        Route::get('/destroy-transportation/{id}',[TransportationController::class,'destroy'])->name('destroy-transportation');
+    });
+    Route::prefix('special')->group(function(){
+        Route::get('/specialoffers', [SpecialOfferController::class,'index'])->name('specialoffers');
+        Route::get('/add-specialoffers',[SpecialOfferController::class,'create'])->name('add-specialoffers');
+        Route::post('/store-specialoffers',[SpecialOfferController::class,'store'])->name('store-specialoffers');
+        Route::get('/edit-specialoffers/{id}',[SpecialOfferController::class,'edit'])->name('edit-specialoffers');
+        Route::post('/update-specialoffers/{id}',[SpecialOfferController::class,'update'])->name('update-specialoffers');
+        Route::get('/destroy-specialoffers/{id}',[SpecialOfferController::class,'destroy'])->name('destroy-specialoffers');
     });
 });

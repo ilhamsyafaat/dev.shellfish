@@ -13,7 +13,7 @@ class BookingController extends Controller
     public function index()
     {
         $data = Booking::all();
-        return view('admin/booking/view',compact('data'));
+        return view('admin/booking/view', compact('data'));
     }
 
     /**
@@ -56,7 +56,8 @@ class BookingController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Booking::find($id);
+        return view('admin.booking.detail', compact('data'));
     }
 
     /**
@@ -72,6 +73,8 @@ class BookingController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Booking::find($id);
+        $data->delete();
+        return redirect()->route('view.booking');
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Destination;
 use App\Models\DestinationFoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class DestinationController extends Controller
 {
@@ -135,12 +136,18 @@ class DestinationController extends Controller
     {
         $data = Destination::find($id);
         $data->delete();
+        if ($data->thumbnails != null || $data->thumbnails ='' ){
+            Storage::delete($data->thumbnails);
+        }
         return redirect()->route('view-destination');
     }
     public function delete(string $id)
     {
         $photo = DestinationFoto::find($id);
         $photo->delete();
+        if ($photo->foto_detail != null || $photo->foto_detail ='' ){
+            Storage::delete($photo->foto_detail);
+        }
         return redirect()->back();
     }
 }

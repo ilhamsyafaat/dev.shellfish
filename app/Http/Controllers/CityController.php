@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
+
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CityController extends Controller
 {
@@ -12,6 +14,7 @@ class CityController extends Controller
      */
     public function index()
     {
+        
         $data = City::all();
         return view('admin.destination.add_city', compact('data'));
     }
@@ -32,7 +35,7 @@ class CityController extends Controller
         $data = new City();
         $data->city = $request->city;
         $data->save();
-        return redirect()->back();
+        return redirect()->back()->withSuccess('Data successfully added');
     }
 
     /**

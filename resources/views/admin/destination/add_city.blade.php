@@ -45,7 +45,7 @@
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $row->city }}</td>
                                 <td>
-                                    <a href="{{route('delete-city',$row->id)}}" type="button"  class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>
+                                    <a id="delete" href="{{route('delete-city',$row->id)}}" type="button"  class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>
                                 </td>
                             </tr>
                         @endforeach

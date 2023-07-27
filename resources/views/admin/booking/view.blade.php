@@ -37,9 +37,9 @@
                                     <td>{{$row->email}}</td>
                                     <td>{{$row->phone}}</td>
                                     <td>
-                                        <a href="{{ url('/admin/booking/detail') }}" id="...." ><button type="button"
+                                        <a href="{{ route('booking-detail',$row->id) }}" id="...." ><button type="button"
                                                 class="btn btn-warning"><i class="bi bi-pencil-square"></i>Detail</button></a>
-                                        <a href="#" id="delete" data-confirm-delete="true" ><button type="button"
+                                        <a href="{{route('booking-delete', $row->id)}}" id="delete" data-confirm-delete="true" ><button type="button"
                                                 class="btn btn-danger delete"><i class="bi bi-trash"></i>Delete</button></a>
                                     </td>
                                 </tr>

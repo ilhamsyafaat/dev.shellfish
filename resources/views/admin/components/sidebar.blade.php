@@ -59,8 +59,8 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="{{ url('/admin/list-transportation') }}">All Transportation</a>
-                <a class="collapse-item" href="{{ url('/admin/add-transportation') }}">Add Transportation</a>
+                <a class="collapse-item" href="{{ route('list-transportation') }}">All Transportation</a>
+                <a class="collapse-item" href="{{ route('add-transportation') }}">Add Transportation</a>
             </div>
         </div>
     </li>
@@ -76,8 +76,8 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="{{ url('/admin/specialoffers') }}"> All Special Offers</a>
-                <a class="collapse-item" href="{{ url('/admin/add-specialoffers') }}">Add Special Offers</a>
+                <a class="collapse-item" href="{{ route('specialoffers') }}"> All Special Offers</a>
+                <a class="collapse-item" href="{{ route('add-specialoffers') }}">Add Special Offers</a>
             </div>
         </div>
     </li>

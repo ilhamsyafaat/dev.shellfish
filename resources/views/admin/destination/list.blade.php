@@ -28,7 +28,7 @@
                             <td>{{ $row->details_descript }}</td>
                             <td>
                                 <a href="{{ route('edit-destination',$row->id) }}"><button type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i>Edit</button></a>
-                                <a href="{{route('destroy-destination',$row->id)}}"  class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>
+                                <a id="delete" href="{{route('destroy-destination',$row->id)}}"  class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>
                             </td>
                           </tr>
                           @endforeach
