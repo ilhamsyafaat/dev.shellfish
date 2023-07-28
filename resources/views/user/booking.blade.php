@@ -30,7 +30,7 @@
                     <div class="ms-auto">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ url('/home') }}" aria-current="page">Home <span
+                                <a class="nav-link active" href="{{ url('/') }}" aria-current="page">Home <span
                                         class="visually-hidden">(current)</span></a>
                             </li>
                             <li class="nav-item">
@@ -102,9 +102,9 @@
             <div class="row">
                 <div class="mb-3 col-md-6">
                     <div class="mb-3">
-                        <label for="country" class="form-label">Your Country</label>
+                        <label for="country" class="form-label">Country</label>
                         <input type="text" class="form-control" name="country" id="country"
-                            placeholder="Your Country">
+                            placeholder="Country">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -132,7 +132,7 @@
 
 
     <footer class="footer-transport fixed-bottom p-2 bg-dark text-center">
-        <div class="container text-white">
+        <div class="container-fluid text-white">
             <ul>
                 <li><i class="bi bi-telephone"></i><a href="https://www.instagram.com/shellfish.balitour/"
                         target="_blank"> +62 821-2929-3099</a></li>

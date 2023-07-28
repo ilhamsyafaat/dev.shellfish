@@ -2,11 +2,11 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box; }
 
-body {
+/* body {
   margin: 20px;
   font-size: 14px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #555; }
+  color: #555; } */
 
 .iti__hide {
   display: none; }

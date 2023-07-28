@@ -70,7 +70,6 @@
               through videos. Perfect gateaway is yours.
             </p>
             <span class="open p-1">Open Daily: 8AM - 9PM</span><br>
-            <caption>Tour Package without hotel</caption>
           </div>
         </div>
       </div>

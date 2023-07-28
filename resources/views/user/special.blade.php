@@ -70,7 +70,7 @@
     </div>
 
     <footer class="footer-transport fixed-bottom p-2 bg-dark text-center">
-        <div class="container text-white">
+        <div class="container-fluid text-white">
             <ul>
                 <li><i class="bi bi-telephone"></i><a href="https://www.instagram.com/shellfish.balitour/"
                         target="_blank"> +62 821-2929-3099</a></li>

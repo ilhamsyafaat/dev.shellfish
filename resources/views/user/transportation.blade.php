@@ -60,7 +60,7 @@
                         <div class="card-body text-blue">
                             <div class="text-center">
                                 <h3 class="card-title fw-bolder">{{$row->name_transportation}}</h3>
-                                <h5 class="card-text">${{$row->price}}<small class="per">/day</small></h5>
+                                <h5 class="card-text">${{$row->price}}<small class="per">/Day</small></h5>
                                 <a href="#" class="btn btn-orange text-white">Details</a>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
     </main>
 
     <footer class="footer-transport fixed-bottom p-2 bg-dark text-center">
-        <div class="container text-white">
+        <div class="container-fluid text-white">
             <ul>
                 <li><i class="bi bi-telephone"></i><a href="https://www.instagram.com/shellfish.balitour/"
                         target="_blank"> +62 821-2929-3099</a></li>
