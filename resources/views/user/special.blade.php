@@ -6,6 +6,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
 
 @include('user.component.header');
 
@@ -68,6 +69,14 @@
             </div>
         </div>
     </div>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <a href="https://api.whatsapp.com/send/?phone=%2B6282129293099&text&type=phone_number&app_absent=0" class="float"
+        target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+      </a>
+  </header>
+
 
     <footer class="footer-transport fixed-bottom p-2 bg-dark text-center">
         <div class="container-fluid text-white">
