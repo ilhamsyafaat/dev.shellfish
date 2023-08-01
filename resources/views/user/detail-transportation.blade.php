@@ -69,26 +69,16 @@
         <div class="row">
             <div class="col-4">
                 <div class="mt-5">
-                    <img src="{{asset('user/assets/images/Ubud/Cretya.png')}}" class="img-fluid rounded mt-5" alt="...">
+                    <img src="{{asset('storage/'.$data->picture_transportation)}}" class="img-fluid rounded mt-5" alt="...">
                 </div>
             </div>
             <div class="col-8 mt-5">
                 <div class="mt-5">
                     <div class="descript">
-                        <h1>Car Name</h1>
-                        <h5 class="card-text">Price<small class="per">/Day</small></h5>
+                        <h1>{{$data->name_transportation}}</h1>
+                        <h5 class="card-text">{{$data->price}}<small class="per">/Day</small></h5>
                         <p class="pb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis neque delectus, iure praesentium sequi corporis laborum pariatur nesciunt, vitae magnam modi suscipit voluptates fuga soluta quaerat esse voluptas atque cum!
-                            Reiciendis perspiciatis, eius voluptatem iure quaerat assumenda repellat voluptates culpa ipsa, ut vitae officiis voluptatum aperiam aliquid quos accusantium praesentium neque nesciunt repellendus, numquam nostrum quis velit mollitia. In, harum.
-                            Sit blanditiis eveniet harum quisquam, nihil incidunt laudantium tempora sequi in cumque, eius doloribus officia architecto maxime nesciunt aliquid? Esse vero minus mollitia nihil doloremque ipsum est obcaecati iste incidunt.
-                            Dicta sapiente quo fugiat, ad adipisci minima suscipit tempore fuga saepe corrupti incidunt deleniti laborum cupiditate? Laboriosam, nostrum accusantium atque dolorem natus, odio voluptatem, nulla provident sunt aperiam esse magnam.
-                            Sapiente exercitationem ullam ipsa voluptates laudantium dolore maxime eum distinctio reiciendis repudiandae delectus expedita quibusdam doloremque saepe nam illo fugiat quo corporis similique placeat quidem consequatur, soluta omnis qui! Consequuntur!
-                            Cupiditate laudantium, in quia magni cumque suscipit sint et aliquid! Quia eum sit maxime incidunt nulla, totam veniam nesciunt distinctio laboriosam, consequuntur quos dolor. Fugiat natus dignissimos voluptas cumque soluta.
-                            Ea facilis mollitia quaerat tenetur quo eius, eligendi quae excepturi nisi. Maiores reiciendis, qui fugit explicabo amet odit, natus voluptates sed aliquam cumque consequuntur a veritatis nam dolor soluta ullam?
-                            Molestiae illo excepturi suscipit eveniet a voluptate accusamus facere tenetur quo ipsam totam, nulla ipsa. Cumque nisi, ipsum beatae, at doloremque distinctio reiciendis veniam praesentium hic earum nostrum consequatur totam.
-                            Nisi, veritatis eos assumenda voluptas quisquam ex tempora laboriosam similique beatae dolores soluta aut eius ipsam non nostrum cupiditate dignissimos earum, quia dolorum. Magnam, nisi ad similique quia aliquid mollitia?
-                            Sit velit tenetur quaerat nostrum? A quaerat molestiae temporibus labore ex, deserunt commodi, quo repudiandae vitae, voluptas impedit consectetur nisi ducimus pariatur quia. At, a? Placeat quam doloremque expedita qui?
-
+                            {{$data->details_description}}
                         </p>
                     </div>
                 </div>

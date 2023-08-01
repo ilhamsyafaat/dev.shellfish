@@ -11,4 +11,8 @@ class UserController extends Controller
         $data = Transportation::all();
         return view('user.transportation', compact('data'));
     }
+    public function Detail_Transportation(string $id) {
+        $data = Transportation::find($id);
+        return view('user.detail-transportation', compact('data'));
+    }
 }

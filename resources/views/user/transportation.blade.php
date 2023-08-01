@@ -61,7 +61,7 @@
                             <div class="text-center">
                                 <h3 class="card-title fw-bolder">{{$row->name_transportation}}</h3>
                                 <h5 class="card-text">${{$row->price}}<small class="per">/Day</small></h5>
-                                <a href="#" class="btn btn-orange text-white">Details</a>
+                                <a href="{{route('detail_transport',$row->id)}}" class="btn btn-orange text-white">Details</a>
                             </div>
                         </div>
                     </div>
