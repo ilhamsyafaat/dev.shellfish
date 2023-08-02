@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    <title>ShellFish | Detail Transportation</title>
+    <title>ShellFish | Detail Destination</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -68,15 +68,36 @@
 <main class="text-blue mb-4">
     <div class="container">
         <div class="row">
-            <div class="col-4">
-                <div class="mt-5">
-                    <img src="{{asset('user/assets/images/Ubud/Cretya.png')}}" class="img-fluid rounded mt-5" alt="...">
+            <div class="col-4 mt-5">
+                {{-- <img src="{{asset('user/assets/images/Ubud/Cretya.png')}}" class="img-fluid rounded mt-5" alt="..."> --}}
+                    <div class="mt-5">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="{{asset('user/assets/images/Ubud/Cretya.png')}}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{{asset('user/assets/images/Ubud/Cretya.png')}}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{{asset('user/assets/images/Ubud/Cretya.png')}}" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
                 </div>
             </div>
             <div class="col-8 mt-5">
                 <div class="mt-5">
                     <div class="descript">
-                        <h1>Car Name</h1>
+                        <h1>Destination Name</h1>
                         <h5 class="card-text">Price<small class="per">/Day</small></h5>
                         <p class="pb-4">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis neque delectus, iure praesentium sequi corporis laborum pariatur nesciunt, vitae magnam modi suscipit voluptates fuga soluta quaerat esse voluptas atque cum!

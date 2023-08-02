@@ -6,8 +6,9 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-@include('user.component.header')
+  
+  @include('user.component.header')
+  <link rel="stylesheet" href="{{asset('user/css/carousel.css')}}">
 
 </head>
 
@@ -712,3 +713,4 @@
 
     
     @include('user.component.footer')
+    <script src="{{asset('user/js/carousel.js')}}"></script>
