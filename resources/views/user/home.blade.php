@@ -6,6 +6,8 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ShellFish Bali is your friendly partner to help and manage your gateways in the beautiful excotic islands
+  of Bali and Banyuwangi.">
 
 @include('user.component.header');
 

@@ -26,6 +26,9 @@ Route::get('/', function () {
 Route::get('/destination', function () {
     return view('user.destination');
 });
+Route::get('/detail-destination', function () {
+    return view('user.detail-destination');
+});
 
 Route::get('/transportation', [UserController::class,'Transportation']);
 Route::get('/detail-transportation/{id}',[UserController::class,'Detail_Transportation'])->name('detail_transport');
