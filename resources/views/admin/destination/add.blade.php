@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
     <div class="container-fluid">
-        <form method="POST" action="{{ route('store-destination') }}" enctype="multipart/form-data">
+        <form id="validate" method="POST" action="{{ route('store-destination') }}" enctype="multipart/form-data">
           @csrf
             <div class="card">
                 <div class="card-header">
@@ -16,9 +16,8 @@
                     <input type="text" class="form-control d-none" readonly value="{{ $kd }}" name="kd">
                     <div class="mb-3">
                         <select class="form-select form-control" name="city_id" aria-label="Default select example">
-                            <option selected>Select City</option>
+                            <option value="">Select City</option>
                             @foreach ($data as $item)
-                                
                                 <option value="{{ $item->id }}">{{ $item->city }}</option>
                             @endforeach
 
@@ -32,10 +31,6 @@
                         <label for="price" class="form-label">Price</label>
                         <div id="price" class="form-text">exchange rate with (USD)</div>
                         <input type="text" name="price" class="form-control" id="price">
-                    </div>
-                    <div class="mb-3">
-                        <label for="shortDescription" class="form-label">Short Description</label>
-                        <textarea class="form-control" name="short_descript" id="shortDescription" rows="2" maxlength="100"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="detailsDescription" class="form-label">Details Description</label>
@@ -65,7 +60,7 @@
                         <div class=" add-more-data">
                             <div class="row mb-3">
                                 <div class="col">
-                                    <input type="file" name="foto_detail[]" id="foto_detail"
+                                    <input type="file" required name="foto_detail[]" id="foto_detail"
                                         accept="image/png, image/jpeg">
                                 </div>
                             </div>
@@ -79,6 +74,30 @@
         </form>
     </div>
 @endsection
+
 @push('js')
     <script src="{{ asset('backend/js/add_foto.js') }}"></script>
+    <script type="text/javascript">
+        $("#validate").validate({
+          
+          rules: {
+            city_id: {
+              required: true,
+            },
+            destination_name: {
+              required: true,
+            },
+            price: {
+              required: true,
+              number: true,
+            },
+            details_descript: {
+              required: true,
+            },
+           
+           
+          },
+        //    
+        });
+      </script>
 @endpush

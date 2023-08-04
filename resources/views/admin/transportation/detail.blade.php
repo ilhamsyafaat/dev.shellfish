@@ -22,10 +22,7 @@
                         <div id="price" class="form-text">exchange rate with (USD)</div>
                         <input type="text" name="price" value="{{ $data->price }}" class="form-control" id="price">
                     </div>
-                    <div class="mb-3">
-                        <label for="shortDescription" class="form-label">Short Description</label>
-                        <textarea class="form-control" name="short_description" id="shortDescription" rows="2" maxlength="100">{{ $data->short_description }}</textarea>
-                    </div>
+                 
                     <div class="mb-3">
                         <label for="detailsDescription" class="form-label">Details Description</label>
                         <textarea class="form-control" name="details_description" id="detailsDescription" rows="3">{{ $data->details_description }}</textarea>

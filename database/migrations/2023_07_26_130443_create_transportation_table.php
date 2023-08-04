@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name_transportation');
             $table->string('picture_transportation');
             $table->integer('price');
-            $table->text('short_description');
             $table->text('details_description');
             $table->timestamps();
         });

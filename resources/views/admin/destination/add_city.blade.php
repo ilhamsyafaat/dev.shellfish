@@ -5,7 +5,7 @@
             <div class="card-header">
                 <h1>Add City</h1>
             </div>
-            <form action="{{route('store-city')}}" method="POST">
+            <form id="validate" action="{{route('store-city')}}" method="POST">
               @csrf
                 <div class="card-body">
                     <div class="mb-3">
@@ -56,3 +56,45 @@
         </div>
     </div>
 @endsection
+@push('js')
+<script type="text/javascript">
+    $("#validate").validate({
+      
+      rules: {
+        name_transportation: {
+          required: true,
+        },
+        city: {
+          required: true,
+        },
+        price: {
+          required: true,
+          number: true,
+        },
+        short_description: {
+          required: true,
+        },
+        details_description: {
+          required: true,
+        },
+       
+      },
+      messages: {
+        judul_event: {
+          required: "Judul event tidak boleh kosong",
+        },
+        pembuat: {
+   
+          required: "pembuat tidak boleh kosong",
+          
+        },
+        foto_event: {
+          required: "foto event harus ditambahkan",
+        },
+        berita: {
+          required: "verita tidak boleh kosong",
+        },
+      },
+    });
+  </script>
+@endpush

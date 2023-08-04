@@ -25,10 +25,7 @@
                             <div id="price" class="form-text">exchange rate with (USD)</div>
                             <input type="text" class="form-control" name="price" id="price">
                         </div>
-                        <div class="mb-3">
-                            <label for="shortDescription" class="form-label">Short Description</label>
-                            <textarea class="form-control" id="shortDescription" name="short_description" rows="2" maxlength="100"></textarea>
-                        </div>
+                     
                         <div class="mb-3">
                             <label for="detailsDescription" class="form-label">Details Description</label>
                             <textarea class="form-control" id="detailsDescription" name="details_description" rows="3"></textarea>

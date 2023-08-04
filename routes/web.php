@@ -23,15 +23,14 @@ Route::get('/', function () {
     return view('user.home');
 });
 
-Route::get('/destination', function () {
-    return view('user.destination');
-});
+Route::get('/destination',[UserController::class,'Destination']);
 Route::get('/detail-destination', function () {
     return view('user.detail-destination');
 });
 
 Route::get('/transportation', [UserController::class,'Transportation']);
 Route::get('/detail-transportation/{id}',[UserController::class,'Detail_Transportation'])->name('detail_transport');
+Route::get('/detail-destination/{id}',[UserController::class,'Detail_Destination'])->name('detail_destination');
 
 Route::get('/special', function () {
     return view('user.special');

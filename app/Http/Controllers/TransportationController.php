@@ -39,7 +39,7 @@ class TransportationController extends Controller
             $data->picture_transportation = $picture_transportation;
         }
         $data->price = $request->price;
-        $data->short_description = $request->short_description;
+
         $data->details_description = $request->details_description;
         $data->save();
         return redirect()->route('list-transportation')->withSuccess('Data successfully added');
@@ -70,7 +70,7 @@ class TransportationController extends Controller
         $data = Transportation::find($id);
         $data->name_transportation = $request->name_transportation;
         $data->price = $request->price;
-        $data->short_description = $request->short_description;
+  
         $data->details_description = $request->details_description;
         if ($request->hasFile('picture_transportation')) {
             Storage::delete($data->picture_transportation);

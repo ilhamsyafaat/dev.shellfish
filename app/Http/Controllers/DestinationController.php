@@ -48,7 +48,7 @@ class DestinationController extends Controller
         $data->city_id = $request->city_id;
         $data->destination_name = $request->destination_name;
         $data->price = $request->price;
-        $data->short_descript = $request->short_descript;
+
         $data->details_descript = $request->details_descript;
         if ($request->hasFile('thumbnails')) {
             $thumbnails=$request->file('thumbnails')->store('thumbnails');
@@ -106,7 +106,7 @@ class DestinationController extends Controller
         $data->city_id = $request->city_id;
         $data->destination_name = $request->destination_name;
         $data->price = $request->price;
-        $data->short_descript = $request->short_descript;
+        
         $data->details_descript = $request->details_descript;
         if ($request->hasFile('thumbnails')) {
             $thumbnails=$request->file('thumbnails')->store('thumbnails');

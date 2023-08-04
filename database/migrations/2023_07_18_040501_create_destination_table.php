@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreign('city_id')->references('id')->on('city')->onDelete('cascade')->onUpdate('cascade');
             $table->string('destination_name');
             $table->float('price');
-            $table->string('short_descript');
-            $table->string('details_descript');
+           
+            $table->text('details_descript');
             $table->string('thumbnails');
             $table->timestamps();
         });

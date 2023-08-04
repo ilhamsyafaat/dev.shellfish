@@ -25,7 +25,7 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td><img src="{{asset('storage/'.$row->thumbnails)}}" width="70px" alt=""></td>
                             <td>{{ $row->destination_name }}</td>
-                            <td>{{ $row->details_descript }}</td>
+                            <td>{{Str::words($row->details_descript,6)}}</td>
                             <td>
                                 <a href="{{ route('edit-destination',$row->id) }}"><button type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i>Edit</button></a>
                                 <a id="delete" href="{{route('destroy-destination',$row->id)}}"  class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>

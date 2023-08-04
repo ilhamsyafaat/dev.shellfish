@@ -39,10 +39,7 @@
                         <input type="text" value="{{ $data->price }}" name="price" class="form-control"
                             id="price">
                     </div>
-                    <div class="mb-3">
-                        <label for="shortDescription" class="form-label">Short Description</label>
-                        <textarea class="form-control" name="short_descript" id="shortDescription" rows="2" maxlength="100">{{ $data->short_descript }}</textarea>
-                    </div>
+                  
                     <div class="mb-3">
                         <label for="detailsDescription" class="form-label">Details Description</label>
                         <textarea class="form-control" name="details_descript" id="detailsDescription" rows="3">{{ $data->details_descript }}</textarea>

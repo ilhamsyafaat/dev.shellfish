@@ -11,4 +11,8 @@ class City extends Model
     protected $table = 'city';
     protected $primaryKey = 'id';
     public $timestamps = true;
+    public function items()
+    {
+        return $this->hasMany(Destination::class, 'city_id','id');
+    }
 }
