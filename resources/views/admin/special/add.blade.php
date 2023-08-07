@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <form action="{{route('store-specialoffers')}}" method="POST" enctype="multipart/form-data">
+        <form id="validate" action="{{route('store-specialoffers')}}" method="POST" enctype="multipart/form-data">
           @csrf
             <div class="card">
                 <div class="card-header">
@@ -17,8 +17,7 @@
                     <div class="mb-3">
                         <div class="input-group mb-3">
                             <div class="custom-file">
-                                <input type="file" id="avatar" name="picture"
-                                    accept="image/png, image/jpeg, image/svg">
+                                <input type="file" id="avatar" name="picture" accept="image/png, image/jpeg, image/svg">
                             </div>
                         </div>
 

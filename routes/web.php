@@ -31,10 +31,9 @@ Route::get('/detail-destination', function () {
 Route::get('/transportation', [UserController::class,'Transportation']);
 Route::get('/detail-transportation/{id}',[UserController::class,'Detail_Transportation'])->name('detail_transport');
 Route::get('/detail-destination/{id}',[UserController::class,'Detail_Destination'])->name('detail_destination');
+Route::get('/special',[UserController::class,'Special'])->name('special_offer');
 
-Route::get('/special', function () {
-    return view('user.special');
-});
+
 
 Route::get('/booking', function () {
     return view('user.booking');

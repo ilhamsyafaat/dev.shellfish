@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Destination;
 use App\Models\DestinationFoto;
+use App\Models\SpecialOffer;
 use App\Models\Transportation;
 use Illuminate\Http\Request;
 
@@ -27,5 +28,10 @@ class UserController extends Controller
         $data = City::with('items')->get();
        
         return view('user.destination', compact('data'));
+    }
+    public function Special() {
+        $data = SpecialOffer::all();
+       
+        return view('user.special', compact('data'));
     }
 }
