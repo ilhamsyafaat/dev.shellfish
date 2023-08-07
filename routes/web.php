@@ -50,7 +50,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
-    })->name('admin');
+    })->name('dashboard');
 
     //shell fish admin    
     // Route::get('/admin', function () {
