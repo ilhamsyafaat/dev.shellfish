@@ -61,9 +61,11 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-center">
                 <div class="mt-6 mb-6">
-                    <div class="row">
-                        <div class="col-md-6 p-3 rounded"><img src="{{ asset('user/assets/images/download.jpg') }}" class="img-fluid" style="width: 24rem;" alt="..."></div>
-                        <div class="col-md-6 p-3 rounded"><img src="{{ asset('user/assets/images/download.jpg') }}" class="img-fluid" style="width: 24rem;" alt="..."></div>
+                    <div class="d-flex flex-wrap">
+                      @foreach ($data as $item)
+                          <div class="p-3 rounded"><img src="{{ asset('storage/'.$item->picture) }}" class="img-fluid" style="width: 24rem;" alt="..."></div>
+                      @endforeach
+                        
                     </div>
                 </div>
             </div>
