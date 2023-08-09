@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <link rel="icon" href="{{ asset('user/assets/icon/Logo.svg') }}">
+    <script src="{{ asset('backend/js/demo/chart-bar-demo.js') }}"></script>
 </head>
 
 <body id="page-top">
@@ -60,6 +61,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         {{-- <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script> --}}
         <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        
 
         <!-- Core plugin JavaScript-->
         <script src="{{ asset('backend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
@@ -73,7 +75,8 @@
 
         <!-- Page level custom scripts -->
         <script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>
-        <script src="{{ asset('backend/js/demo/chart-pie-demo.js') }}"></script>
+        <script src="{{ asset('backend/js/demo/chart-bar-demo.js') }}"></script>
+        {{-- <script src="{{ asset('backend/js/demo/chart-pie-demo.js') }}"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript">
             $(function() {

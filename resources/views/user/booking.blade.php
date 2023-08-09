@@ -125,7 +125,7 @@
                 <span id="error-msg" class="hide"></span>
             </div>
             <div class="mb-3 d-grid gap-2">
-                <button type="submit" class="btn btn-orange text-white">Button</button>
+                <button type="submit" class="btn btn-orange text-white">Booking</button>
             </div>
         </form>
     </div>
