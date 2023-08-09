@@ -77,7 +77,7 @@
                 <div class="mt-5">
                     <div class="descript">
                         <h1>{{$data->name_transportation}}</h1>
-                        <h5 class="card-text">{{$data->price}}<small class="per">/Day</small></h5>
+                        <h5 class="card-text">$ {{$data->price}}<small class="per">/Day</small></h5>
                         <p class="pb-4">
                             {{$data->details_description}}
                         </p>
