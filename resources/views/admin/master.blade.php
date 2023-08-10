@@ -75,7 +75,7 @@
 
         <!-- Page level custom scripts -->
         <script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>
-        <script src="{{ asset('backend/js/demo/chart-bar-demo.js') }}"></script>
+        {{-- <script src="{{ asset('backend/js/demo/chart-bar-demo.js') }}"></script> --}}
         {{-- <script src="{{ asset('backend/js/demo/chart-pie-demo.js') }}"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript">
