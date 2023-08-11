@@ -62,6 +62,11 @@ Route::middleware([
         $jumlahDataTahun = DB::table('booking')
             ->whereRaw("DATE_FORMAT(created_at, '%Y') = '$tahunIni'")
             ->count();
+        $year = Booking::select(DB::raw("DATE_FORMAT(created_at, '%Y') AS year"))
+            ->GroupBy(DB::raw("DATE_FORMAT(created_at, '%Y')"))
+            ->OrderBy(DB::raw('created_at'))
+            ->pluck('year');
+
         // $year = Booking::select(DB::raw("YEAR(created_at) as year"))
         //     ->pluck('year');
         $bulan = Booking::select(DB::raw("MONTHNAME(created_at) as bulan"))
@@ -72,6 +77,15 @@ Route::middleware([
             ->OrderBy(DB::raw('Month(created_at)'))
             ->GroupBy(DB::raw("Month(created_at)"))
             ->pluck('pendaftar');
+        $results = DB::table('booking')
+            ->select(
+                DB::raw("DATE_FORMAT(created_at, '%M') AS nama_bulan"),
+                DB::raw("DATE_FORMAT(created_at, '%Y') AS tahun"),
+                DB::raw("COUNT(*) AS daftar")
+            )
+            ->groupBy(DB::raw("DATE_FORMAT(created_at, '%M'), DATE_FORMAT(created_at, '%Y')"))
+            ->orderBy('created_at')
+            ->get();
 
         // $datavidio = vidio::select(DB::raw("COUNT(*) as jumlah"))
         //     ->count();
@@ -79,7 +93,7 @@ Route::middleware([
         //     ->count();
         // $dataprestasi = prestasi::select(DB::raw("COUNT(*) as jumlah"))
         //     ->count();
-        return view('admin.dashboard', compact('destination','jumlahData','jumlahDataTahun','bulan','bookingChart'));
+        return view('admin.dashboard', compact('destination', 'jumlahData', 'jumlahDataTahun', 'bulan', 'bookingChart', 'results', 'year'));
     })->name('dashboard');
 
     //shell fish admin    

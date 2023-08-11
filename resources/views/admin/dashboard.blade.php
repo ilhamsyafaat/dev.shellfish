@@ -31,7 +31,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Bookings (Monthly)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jumlahData}}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlahData }}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -41,8 +41,8 @@
                         </div>
                     </div>
 
-                        <!-- Earnings (Monthly) Card Example -->
-                     
+                    <!-- Earnings (Monthly) Card Example -->
+
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card border-left-success shadow h-100 py-2">
@@ -51,7 +51,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             Bookings (Annual)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jumlahDataTahun}}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlahDataTahun }}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -63,6 +63,22 @@
 
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Destination</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $destination }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card border-left-info shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
@@ -87,7 +103,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- Pending Requests Card Example -->
 
@@ -103,7 +119,12 @@
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-primary">Booking List Overview</h6>
-                                <div class="dropdown no-arrow">
+                                <select class="custom-select" style="width: 400px;" id="tahun" onchange="updateChart()">
+                                    @foreach ($year as $item)
+                                        <option value="{{ $item }}">{{ $item }}</option>
+                                    @endforeach
+                                </select>
+                                {{-- <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -116,7 +137,7 @@
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="#">Something else here</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
@@ -193,88 +214,94 @@
         }
 
         // Bar Chart Example
-        var ctx = document.getElementById("myBarChart");
-        var bookingChart = <?php echo json_encode($bookingChart); ?>;
-        var bulan = <?php echo json_encode($bulan); ?>;
-        var myBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: bulan,
-                datasets: [{
-                    label: "Revenue",
-                    backgroundColor: "#4e73df",
-                    hoverBackgroundColor: "#2e59d9",
-                    borderColor: "#4e73df",
-                    data: bookingChart,
-                }],
-            },
-            options: {
-                maintainAspectRatio: false,
-                layout: {
-                    padding: {
-                        left: 10,
-                        right: 25,
-                        top: 25,
-                        bottom: 0
-                    }
-                },
-                scales: {
-                    xAxes: [{
-                        time: {
-                            unit: 'month'
-                        },
-                        gridLines: {
-                            display: false,
-                            drawBorder: false
-                        },
-                        ticks: {
-                            maxTicksLimit: 6
-                        },
-                        maxBarThickness: 25,
+        function updateChart() {
+            var ctx = document.getElementById("myBarChart");
+            var data = <?php echo json_encode($results); ?>;
+            // var bookingChart = <?php echo json_encode($bookingChart); ?>;
+            var selectedYear = document.getElementById('tahun').value;
+            var filteredData = data.filter(item => item.tahun == selectedYear);
+            // var bulan = <?php echo json_encode($bulan); ?>;
+            var myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: filteredData.map(item => item.nama_bulan),
+                    datasets: [{
+                        label: "Revenue",
+                        backgroundColor: "#4e73df",
+                        hoverBackgroundColor: "#2e59d9",
+                        borderColor: "#4e73df",
+                        data: filteredData.map(item => item.daftar),
                     }],
-                    yAxes: [{
-                        ticks: {
-                            min: 0,
-                            // max: 15000,
-                            maxTicksLimit: 5,
-                            padding: 10,
-                            // Include a dollar sign in the ticks
-                            callback: function(value, index, values) {
-                                return number_format(value);
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 25,
+                            top: 25,
+                            bottom: 0
+                        }
+                    },
+                    scales: {
+                        xAxes: [{
+                            time: {
+                                unit: 'month'
+                            },
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 6
+                            },
+                            maxBarThickness: 25,
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                min: 0,
+                                // max: 15000,
+                                maxTicksLimit: 5,
+                                padding: 10,
+                                // Include a dollar sign in the ticks
+                                callback: function(value, index, values) {
+                                    return number_format(value);
+                                }
+                            },
+                            gridLines: {
+                                color: "rgb(234, 236, 244)",
+                                zeroLineColor: "rgb(234, 236, 244)",
+                                drawBorder: false,
+                                borderDash: [2],
+                                zeroLineBorderDash: [2]
                             }
-                        },
-                        gridLines: {
-                            color: "rgb(234, 236, 244)",
-                            zeroLineColor: "rgb(234, 236, 244)",
-                            drawBorder: false,
-                            borderDash: [2],
-                            zeroLineBorderDash: [2]
+                        }],
+                    },
+                    legend: {
+                        display: false
+                    },
+                    tooltips: {
+                        titleMarginBottom: 10,
+                        titleFontColor: '#6e707e',
+                        titleFontSize: 14,
+                        backgroundColor: "rgb(255,255,255)",
+                        bodyFontColor: "#858796",
+                        borderColor: '#dddfeb',
+                        borderWidth: 1,
+                        xPadding: 15,
+                        yPadding: 15,
+                        displayColors: false,
+                        caretPadding: 10,
+                        callbacks: {
+                            label: function(tooltipItem, chart) {
+                                var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                                return datasetLabel + number_format(tooltipItem.yLabel);
+                            }
                         }
-                    }],
-                },
-                legend: {
-                    display: false
-                },
-                tooltips: {
-                    titleMarginBottom: 10,
-                    titleFontColor: '#6e707e',
-                    titleFontSize: 14,
-                    backgroundColor: "rgb(255,255,255)",
-                    bodyFontColor: "#858796",
-                    borderColor: '#dddfeb',
-                    borderWidth: 1,
-                    xPadding: 15,
-                    yPadding: 15,
-                    displayColors: false,
-                    caretPadding: 10,
-                    callbacks: {
-                        label: function(tooltipItem, chart) {
-                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-                            return datasetLabel + number_format(tooltipItem.yLabel);
-                        }
-                    }
-                },
-            }
-        });
+                    },
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', updateChart);
     </script>
 @endpush
