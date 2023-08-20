@@ -62,9 +62,9 @@
         <div class="col-lg-6">
           <div class="content text-white">
             <img src="{{asset('user/assets/icon/Logo.svg')}}" alt="ShellFish Logo" srcset="">
-            <h1>ShellFish</h1>
+            {{-- <h1>ShellFish</h1> --}}
             <p>
-              ShellFish Bali is your friendly partner to help and manage your gateways in the beautiful excotic islands
+              ShellFish Bali Tour is your friendly partner to help and manage your gateways in the beautiful excotic islands
               of Bali and Banyuwangi. We offer the custom itineraries, affordable and comfortable services. We will
               bring you to enjoy and explore the fun, adventurous activities, the breathtaking natural view and the
               magnificent art, culture, places. </p>
@@ -75,6 +75,7 @@
           </div>
         </div>
       </div>
+    </div>
 
 
 

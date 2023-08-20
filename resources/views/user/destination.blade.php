@@ -224,9 +224,10 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                <div class="col text-center">
+                <div class="mb-5"></div>
+                {{-- <div class="col text-center">
                     <button type="button" class="btn btn-primary">See More</button>
-                </div>
+                </div> --}}
             @endforeach
 
 
