@@ -74,23 +74,25 @@
         <form id="validate" action="{{ route('store.booking') }}" method="POST">
             @csrf
             <div class="row">
-                <div class="mb-3 col-md-6">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name">
-                </div>
-                <div class="mb-3 col-md-3">
-                    <label for="Date" class="form-label">Start Date</label>
-                    <input type="date" class="form-control" name="start" id="start" placeholder="Start">
-                </div>
-                <div class="mb-3 col-md-3">
-                    <label for="Date" class="form-label">End Date</label>
-                    <input type="date" class="form-control" name="end" id="end" placeholder="Start">
-                </div>
-            </div>
-            <div class="row">
-                <div class="mb-3 col-md-6">
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" name="lastname" id="lastName" placeholder="Last Name">
+                    <div class="mb-3 col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="lastname" id="lastName" placeholder="Last Name">
+                    </div>
+                <div class="col-md">
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="Date" class="form-label">Start Date</label>
+                            <input type="date" class="form-control" name="start" id="start" placeholder="Start">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="Date" class="form-label">End Date</label>
+                            <input type="date" class="form-control" name="end" id="end" placeholder="Start">
+                        </div>
+                    </div>
                 </div>
                 <div class="mb-3 col-md-6">
                     <label for="participant" class="form-label">Participant</label>
