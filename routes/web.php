@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SpecialOfferController;
 use App\Http\Controllers\TransportationController;
 use App\Http\Controllers\UserController;
@@ -136,4 +137,6 @@ Route::middleware([
         Route::post('/update-specialoffers/{id}', [SpecialOfferController::class, 'update'])->name('update-specialoffers');
         Route::get('/destroy-specialoffers/{id}', [SpecialOfferController::class, 'destroy'])->name('destroy-specialoffers');
     });
+   
 });
+Route::get('/admin/logout', [LoginController::class, 'log'])->name('admin.logout')->middleware('auth');

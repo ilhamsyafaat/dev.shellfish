@@ -37,7 +37,7 @@
                                 <a class="nav-link" href="{{ url('/destination') }}">Destinations</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="specialOffers.html">Special Offers</a>
+                                <a class="nav-link" href="{{ url('/special') }}">Special Offers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/transportation') }}">Transportation</a>
