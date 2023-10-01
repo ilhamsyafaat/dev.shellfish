@@ -16,6 +16,11 @@
 #error-msg{
   color: red;
 }
+
+.bg-blue{
+  background-color: #0F7794;
+}
+
 .carousel-control-prev,
   .carousel-control-next {
     background-color: #e1e1e1;
@@ -264,6 +269,10 @@ header span{
 }
 .per{
   font-size: medium;
+}
+
+.condition ol li{
+  text-align: justify;
 }
 
 .transport{

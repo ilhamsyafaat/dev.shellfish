@@ -51,8 +51,21 @@
         </a>
     </header>
 
-    <main class="transport">
+    <main class="transport bg-blue">
         <div class="container">
+            <div class="condition text-white">
+                <div class="p-3">
+                    <h3>CONDITIONS</h3>
+                    <ol>
+                        <li value="1">We will pick you up by the car that you have chosen at Ngurah Rai International Airport based on the arrival time. Please attach your flight ticket so that we can know the flight status at the airport.</li>
+                        <li>The driver and the guide will be ready to accompany you since the day you arrive until the last day. They will be ready to help you during the tour. Please do not hesitate to call the guide and driver anytime.</li>
+                        <li>You may choose the itineraries and destinations by yourself or you may also take our advice.</li>
+                        <li>The starting time is flexible based on the destinations. In the case of the location is substantial from the hotel or you may plan to hunt for sunrise moment, we will pick you up earlier upon request.</li>
+                        <li>We will appreciate if you can finish the tour before 10 pm.</li>
+                        <li>We will drop you to the airport in the departure day. </li>
+                    </ol>
+                </div>
+            </div>
             <div class="row text-center d-flex justify-content-center mb-5">
                 @foreach ($data as $item => $row)
                     <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
