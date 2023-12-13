@@ -27,7 +27,7 @@
                                 <a class="nav-link" href="{{ url('/transportation') }}">Transportation</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link badge text-bg-orange m-2 p-2" href="{{ url('/booking') }}">Book</a>
+                                <a class="p-2 m-2 nav-link badge text-bg-orange" href="{{ url('/booking') }}">Book</a>
                             </li>
                             <!-- Language -->
                             <!-- <div class="nav-item dropdown">
@@ -53,7 +53,7 @@
 
     <main class="transport bg-blue">
         <div class="container">
-            <div class="condition text-white">
+            <div class="text-white condition">
                 <div class="p-3">
                     <h3>CONDITIONS</h3>
                     <ol>
@@ -66,15 +66,15 @@
                     </ol>
                 </div>
             </div>
-            <div class="row text-center d-flex justify-content-center mb-5">
+            <div class="mb-5 text-center row d-flex justify-content-center">
                 @foreach ($data as $item => $row)
-                    <div class="card m-3 col-md-3 col-sm-12" style="width: 15rem;">
+                    <div class="m-3 card col-md-3 col-sm-12" style="width: 15rem;">
                         <img src="{{asset('storage/'.$row->picture_transportation)}}" class="card-img-top" alt="...">
                         <div class="card-body text-blue">
                             <div class="text-center">
                                 <h3 class="card-title fw-bolder">{{$row->name_transportation}}</h3>
                                 <h5 class="card-text">${{$row->price}}<small class="per">/Day</small></h5>
-                                <a href="{{route('detail_transport',$row->id)}}" class="btn btn-orange text-white">Details</a>
+                                <a href="{{route('detail_transport',$row->id)}}" class="text-white btn btn-orange">Details</a>
                             </div>
                         </div>
                     </div>
@@ -85,10 +85,10 @@
         </div>
     </main>
 
-    <footer class="footer-transport fixed-bottom p-2 bg-dark text-center">
-        <div class="container-fluid text-white">
+    <footer class="p-2 text-center footer-transport fixed-bottom bg-dark">
+        <div class="text-white container-fluid">
             <ul>
-                <li><i class="bi bi-telephone"></i><a href="https://www.instagram.com/shellfish.balitour/"
+                <li><i class="bi bi-telephone"></i><a href="https://wa.me/6282129293099"
                         target="_blank"> +62 821-2929-3099</a></li>
                 <li><i class="bi bi-instagram"></i><a href="https://www.instagram.com/shellfish.balitour/"
                         target="_blank"> shellfish.balitour</a></li>

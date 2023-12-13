@@ -1,7 +1,7 @@
-<footer class="footer fixed-bottom p-2 text-center">
-    <div class="container-fluid text-white">
+<footer class="p-2 text-center footer fixed-bottom">
+    <div class="text-white container-fluid">
         <ul>
-            <li><i class="bi bi-telephone"></i><a href="https://www.instagram.com/shellfish.balitour/"
+            <li><i class="bi bi-telephone"></i><a href="https://wa.me/6282129293099"
                     target="_blank"> +62 821-2929-3099</a></li>
             <li><i class="bi bi-instagram"></i><a href="https://www.instagram.com/shellfish.balitour/"
                     target="_blank"> shellfish.balitour</a></li>

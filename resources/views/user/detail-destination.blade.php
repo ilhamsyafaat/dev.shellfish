@@ -41,7 +41,7 @@
                             <a class="nav-link" href="{{ url('/transportation') }}">Transportation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link badge text-bg-orange m-2 p-2" href="{{ url('/booking') }}">Book</a>
+                            <a class="p-2 m-2 nav-link badge text-bg-orange" href="{{ url('/booking') }}">Book</a>
                         </li>
                         <!-- Language -->
                         <!-- <div class="nav-item dropdown">
@@ -65,11 +65,11 @@
     </a>
 </header>
 
-<main class="text-blue mb-4">
+<main class="mb-4 text-blue">
     <div class="container">
         <div class="row">
-            <div class="col-4 mt-5">
-                {{-- <img src="{{asset('user/assets/images/Ubud/Cretya.png')}}" class="img-fluid rounded mt-5" alt="..."> --}}
+            <div class="mt-5 col-4">
+                {{-- <img src="{{asset('user/assets/images/Ubud/Cretya.png')}}" class="mt-5 rounded img-fluid" alt="..."> --}}
                     <div class="mt-5">
                     <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner">
@@ -97,7 +97,7 @@
                       </div>
                 </div>
             </div>
-            <div class="col-8 mt-5">
+            <div class="mt-5 col-8">
                 <div class="mt-5">
                     <div class="descript">
                         <h1>{{$data->destination_name}}</h1>
@@ -111,10 +111,10 @@
         </div>
 </main>
 
-<footer class="footer-transport fixed-bottom p-2 bg-dark text-center">
-    <div class="container-fluid text-white">
+<footer class="p-2 text-center footer-transport fixed-bottom bg-dark">
+    <div class="text-white container-fluid">
         <ul>
-            <li><i class="bi bi-telephone"></i><a href="https://www.instagram.com/shellfish.balitour/"
+            <li><i class="bi bi-telephone"></i><a href="https://wa.me/6282129293099"
                     target="_blank"> +62 821-2929-3099</a></li>
             <li><i class="bi bi-instagram"></i><a href="https://www.instagram.com/shellfish.balitour/"
                     target="_blank"> shellfish.balitour</a></li>

@@ -39,7 +39,7 @@
                 <a class="nav-link" href="{{ url('/transportation') }}">Transportation</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link badge text-bg-orange m-2 p-2"
+                <a class="p-2 m-2 nav-link badge text-bg-orange"
                   href="{{url('/booking')}}">Book</a>
               </li>
               <!-- Language -->
@@ -61,7 +61,7 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-center">
                 <div class="mt-6 mb-6">
-                    <div class="d-flex flex-wrap">
+                    <div class="flex-wrap d-flex">
                       @foreach ($data as $item)
                           <div class="p-3 rounded"><img src="{{ asset('storage/'.$item->picture) }}" class="img-fluid" style="width: 24rem;" alt="..."></div>
                       @endforeach
@@ -80,10 +80,10 @@
   </header>
 
 
-    <footer class="footer-transport fixed-bottom p-2 bg-dark text-center">
-        <div class="container-fluid text-white">
+    <footer class="p-2 text-center footer-transport fixed-bottom bg-dark">
+        <div class="text-white container-fluid">
             <ul>
-                <li><i class="bi bi-telephone"></i><a href="https://www.instagram.com/shellfish.balitour/"
+                <li><i class="bi bi-telephone"></i><a href="https://wa.me/6282129293099"
                         target="_blank"> +62 821-2929-3099</a></li>
                 <li><i class="bi bi-instagram"></i><a href="https://www.instagram.com/shellfish.balitour/"
                         target="_blank"> shellfish.balitour</a></li>

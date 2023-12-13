@@ -43,7 +43,7 @@
                                 <a class="nav-link" href="{{ url('/transportation') }}">Transportation</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link badge text-bg-orange m-2 p-2" href="{{ url('/booking') }}">Book</a>
+                                <a class="p-2 m-2 nav-link badge text-bg-orange" href="{{ url('/booking') }}">Book</a>
                             </li>
                             <!-- Language -->
                             <!-- <div class="nav-item dropdown">
@@ -67,8 +67,8 @@
     </header>
 
     <div class="m-4"></div>
-    <div class="container contet bg-white rounded-2 booking">
-        <div class="text-center p-4 text-orange ">
+    <div class="container bg-white contet rounded-2 booking">
+        <div class="p-4 text-center text-orange ">
             <h3 class="fw-bolder">Booking</h3>
         </div>
         <form id="validate" action="{{ route('store.booking') }}" method="POST">
@@ -126,17 +126,17 @@
                 <span id="valid-msg" class="hide"></span>
                 <span id="error-msg" class="hide"></span>
             </div>
-            <div class="mb-3 d-grid gap-2">
-                <button type="submit" class="btn btn-orange text-white">Booking</button>
+            <div class="gap-2 mb-3 d-grid">
+                <button type="submit" class="text-white btn btn-orange">Booking</button>
             </div>
         </form>
     </div>
 
 
-    <footer class="footer-transport fixed-bottom p-2 bg-dark text-center">
-        <div class="container-fluid text-white">
+    <footer class="p-2 text-center footer-transport fixed-bottom bg-dark">
+        <div class="text-white container-fluid">
             <ul>
-                <li><i class="bi bi-telephone"></i><a href="https://www.instagram.com/shellfish.balitour/"
+                <li><i class="bi bi-telephone"></i><a href="https://wa.me/6282129293099"
                         target="_blank"> +62 821-2929-3099</a></li>
                 <li><i class="bi bi-instagram"></i><a href="https://www.instagram.com/shellfish.balitour/"
                         target="_blank"> shellfish.balitour</a></li>
