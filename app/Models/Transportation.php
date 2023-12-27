@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Transportation extends Model
 {
     use HasFactory;
-    protected $table = 'Transportation';
+    protected $table = 'transportation';
     protected $primaryKey = 'id';
     public $timestamps = true;
 }
