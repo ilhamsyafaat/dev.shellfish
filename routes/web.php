@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('user.home');
+    return view('user.home'); // untuk unit testing pelanggan home
 });
 
 Route::get('/destination', [UserController::class, 'Destination']);
