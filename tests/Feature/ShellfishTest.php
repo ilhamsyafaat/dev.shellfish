@@ -27,6 +27,22 @@ class ShellfishTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_special()
+    {
+        $response = $this->get('/special'); // Unit test destinations role pelanggan
+
+        $response->assertStatus(200);
+    }
+
+    public function test_transportation()
+    {
+        $response = $this->get('/transportation'); // Unit test destinations role pelanggan
+
+        $response->assertSee('Details');
+
+        $response->assertStatus(200);
+    }
+
     public function test_user_tidak_bisa_akses_dashboard()
     {
         $response = $this->get('/dashboard'); // Unit test ketika pelanggan tidak bisa akses dashboard
