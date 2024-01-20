@@ -64,6 +64,7 @@ Route::middleware([
         Route::get('/booking/detail/{id}', [BookingController::class, 'edit'])->name('booking-detail');
         Route::get('/booking/delete/{id}', [BookingController::class, 'destroy'])->name('booking-delete');
         Route::get('/search', [BookingController::class, 'search'])->name('booking-search');
+        Route::get('booking/export/excel', [BookingController::class, 'export_excel'])->name('booking-export-excel');
     });
     Route::prefix('destination')->group(function () {
         Route::get('/add-city', [CityController::class, 'index'])->name('add-city');

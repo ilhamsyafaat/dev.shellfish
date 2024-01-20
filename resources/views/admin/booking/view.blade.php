@@ -5,7 +5,7 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-3 text-gray-800">Booking</h1>
 
-        <div class="row">
+        <div class="row align-items-center justify-content-between">
             <div class="col-md-5">
                 <form action={{ Route('booking-search') }} method="get">
                     <div class="input-group mb-3">
@@ -13,6 +13,10 @@
                         <button class="btn btn-primary" type="submit">Search</button>
                       </div>
                 </form>
+            </div>     
+            <div class="row col-md-2 mb-3">
+                <a href="{{ Route('booking-export-excel') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    class="fas fa-download fa-sm text-white-50"></i> Download Report</a>   
             </div>
         </div>
 
@@ -34,7 +38,9 @@
                                 <th>No</th>
                                 <th>Firstname</th>
                                 <th>Email</th>
+                                <th>Country</th>
                                 <th>Phone</th>
+                                <th>Booking Date</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -44,7 +50,9 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{$row->firstname}}</td>
                                     <td>{{$row->email}}</td>
+                                    <td>{{$row->country}}</td>
                                     <td>{{$row->phone}}</td>
+                                    <td>{{$row->start}}</td>
                                     <td>
                                         <a href="{{ route('booking-detail',$row->id) }}" id="...." ><button type="button"
                                                 class="btn btn-warning"><i class="bi bi-pencil-square"></i>Detail</button></a>
@@ -56,7 +64,7 @@
                         </tbody>
                     </table>
                 </div>
-                {{ $data->links() }}
+                {{-- {{ $data->links() }} --}}
             </div>
         </div>
     </div>

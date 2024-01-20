@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportBooking;
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-
+    use WithPagination;
     public function index()
     {
         $data = Booking::all();
@@ -18,17 +21,26 @@ class BookingController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for searching a data.
      */
     public function search(Request $request)
     {
         $search = $request->search;
         $data = Booking::where('firstname', 'LIKE', '%' . $search . '%')
             ->orWhere('email', 'LIKE', '%' . $search . '%')
+            ->orWhere('country', 'LIKE', '%' . $search . '%')
             ->orWhere('phone', 'LIKE', '%' . $search . '%')
-            ->paginate(5)->withQueryString();
+            ->orWhere('start', 'LIKE', '%' . $search . '%')->paginate(3)->withQueryString();
 
         return view('admin/booking/view', compact('data', 'search'));
+    }
+
+    /**
+     * Show the form for export a data.
+     */
+    public function export_excel()
+    {
+        return Excel::download(new ExportBooking, "booking.xlsx");
     }
 
     /**
