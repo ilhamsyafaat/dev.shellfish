@@ -10,6 +10,7 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $data = Booking::all();
@@ -19,9 +20,15 @@ class BookingController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function search(Request $request)
     {
-        //
+        $search = $request->search;
+        $data = Booking::where('firstname', 'LIKE', '%' . $search . '%')
+            ->orWhere('email', 'LIKE', '%' . $search . '%')
+            ->orWhere('phone', 'LIKE', '%' . $search . '%')
+            ->paginate(5)->withQueryString();
+
+        return view('admin/booking/view', compact('data', 'search'));
     }
 
     /**

@@ -3,7 +3,18 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Booking</h1>
+        <h1 class="h3 mb-3 text-gray-800">Booking</h1>
+
+        <div class="row">
+            <div class="col-md-5">
+                <form action={{ Route('booking-search') }} method="get">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ isset($search)? $search : '' }}">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                      </div>
+                </form>
+            </div>
+        </div>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -12,7 +23,6 @@
                     <div class="col">
                         <h6 class="m-0 font-weight-bold text-primary">DataTable Booking</h6>
                     </div>
-                   
                 </div>
 
             </div>
@@ -28,7 +38,6 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-
                         <tbody>
                             @foreach ($data as $item => $row)
                                 <tr>
@@ -47,9 +56,14 @@
                         </tbody>
                     </table>
                 </div>
+                {{ $data->links() }}
             </div>
         </div>
-
     </div>
+
+    {{-- @else
+        <p class="text-center fs-4">Data Booking Not Found.</p>
+    @endif --}}
+
 @endsection
 

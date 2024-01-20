@@ -63,6 +63,7 @@ Route::middleware([
         Route::get('/view/booking', [BookingController::class, 'index'])->name('view.booking');
         Route::get('/booking/detail/{id}', [BookingController::class, 'edit'])->name('booking-detail');
         Route::get('/booking/delete/{id}', [BookingController::class, 'destroy'])->name('booking-delete');
+        Route::get('/search', [BookingController::class, 'search'])->name('booking-search');
     });
     Route::prefix('destination')->group(function () {
         Route::get('/add-city', [CityController::class, 'index'])->name('add-city');

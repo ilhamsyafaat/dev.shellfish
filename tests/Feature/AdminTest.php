@@ -11,17 +11,30 @@ use Tests\TestCase;
 class AdminTest extends TestCase
 {
     // use RefreshDatabase;
-    // Unit test admin
-    public function test_add_city(): void
+    use WithFaker;
+    //booking test
+    public function test_view_booking() //perbaiki
     {
         $user = User::factory()->create();
-        $response = $this->actingAs($user)
-            ->get(route('store-city'), [
-
-                'city' => 'Bwi'
-            ]);
-
-        // $this->assertResponseOk();
-        $response->assertStatus(200);
+        $this->assertNotEmpty($user->name);
     }
+
+    //city
+    public function test_add_city()
+    {
+        $user = User::factory()->create();
+        $response = $this->actingAs($user)->post(route('store-city'), [
+            //parameter
+            'city' => 'Bali'
+        ]);
+
+        $this->assertDatabaseHas('city', [
+            'city' => 'Bali'
+        ]);
+        
+        $response->assertStatus(302);
+        $response->assertRedirect()->withSuccess('Data successfully added');
+    }
+
+    
 }
