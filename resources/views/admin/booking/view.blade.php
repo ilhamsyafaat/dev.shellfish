@@ -64,14 +64,12 @@
                         </tbody>
                     </table>
                 </div>
-                {{-- {{ $data->links() }} --}}
+                {{ $data->links() }}
             </div>
         </div>
     </div>
 
-    {{-- @else
-        <p class="text-center fs-4">Data Booking Not Found.</p>
-    @endif --}}
+    {{-- <p class="text-center fs-4">Data Booking Not Found.</p> --}}
 
 @endsection
 

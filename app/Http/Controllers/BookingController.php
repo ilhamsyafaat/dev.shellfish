@@ -10,13 +10,13 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class BookingController extends Controller
 {
+    use WithPagination;
     /**
      * Display a listing of the resource.
      */
-    use WithPagination;
     public function index()
     {
-        $data = Booking::all();
+        $data = Booking::paginate(5)->withQueryString();
         return view('admin/booking/view', compact('data'));
     }
 
@@ -30,7 +30,7 @@ class BookingController extends Controller
             ->orWhere('email', 'LIKE', '%' . $search . '%')
             ->orWhere('country', 'LIKE', '%' . $search . '%')
             ->orWhere('phone', 'LIKE', '%' . $search . '%')
-            ->orWhere('start', 'LIKE', '%' . $search . '%')->paginate(3)->withQueryString();
+            ->orWhere('start', 'LIKE', '%' . $search . '%')->paginate(5)->withQueryString();
 
         return view('admin/booking/view', compact('data', 'search'));
     }
@@ -49,15 +49,15 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $data = new Booking();
-        $data->firstname        = $request->firstname;
-        $data->lastname        = $request->lastname;
-        $data->start        = $request->start;
-        $data->end        = $request->end;
-        $data->participant        = $request->participant;
-        $data->country        = $request->country;
-        $data->email        = $request->email;
-        $data->phone        = $request->phone;
-        $data->message        = $request->message;
+        $data->firstname = $request->firstname;
+        $data->lastname = $request->lastname;
+        $data->start = $request->start;
+        $data->end = $request->end;
+        $data->participant = $request->participant;
+        $data->country = $request->country;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->message = $request->message;
         $data->save();
         return view('user/alert');
     }
