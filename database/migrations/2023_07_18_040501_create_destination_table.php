@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('destination_name');
             $table->float('price');
             $table->text('details_descript');
-            $table->string('thumbnails');
+            $table->string('thumbnails')->nullable();
             $table->timestamps();
         });
     }

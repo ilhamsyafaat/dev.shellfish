@@ -51,7 +51,7 @@ class ShellfishTest extends TestCase
         $response->assertRedirect('/login');
     }
 
-    public function test_user_melakukan_booking() // Unit test ketika pelanggan booking 
+    public function test_user_booking() // Unit test ketika pelanggan booking 
     // Terjadi error dikarenakan pada database yang digunakan yaitu shellfish tidak ada id detination
     {
         $user = User::factory()->create();

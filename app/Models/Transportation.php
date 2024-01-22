@@ -11,4 +11,12 @@ class Transportation extends Model
     protected $table = 'transportation';
     protected $primaryKey = 'id';
     public $timestamps = true;
+
+    protected $fillable = [
+        'id',
+        'name_transportation',
+        'picture_transportation',
+        'price',
+        'details_description',
+    ];
 }

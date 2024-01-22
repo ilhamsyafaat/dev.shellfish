@@ -44,7 +44,7 @@ class DestinationController extends Controller
     public function store(Request $request)
     {
         $data = new Destination();
-        $data->id = $request->kd;
+        $data->id = $request->id;
         $data->city_id = $request->city_id;
         $data->destination_name = $request->destination_name;
         $data->price = $request->price;
